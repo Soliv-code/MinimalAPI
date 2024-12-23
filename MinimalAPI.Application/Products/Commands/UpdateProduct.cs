@@ -6,9 +6,9 @@ namespace MinimalAPI.Application.Products.Commands
     public class UpdateProduct : IRequest<Product>
     {
         public int ProductId { get; set; }
-        public required string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public required int Qnt { get; set; }
-        public required decimal Price { get; set; }
+        public int Qnt { get; set; }
+        public decimal Price { get; set; }
     }
 }
