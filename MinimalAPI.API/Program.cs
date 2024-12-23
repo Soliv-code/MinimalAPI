@@ -2,13 +2,11 @@ using MinimalAPI.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Extensions/MinimalAPIExtensions.cs
-builder.RegisterDbContext();    
-builder.RegisterRepository();   
-builder.RegisterMediatR();      
+builder.RegisterDbContext();    // Extensions/MinimalAPIExtensions.cs
+builder.RegisterRepository();   //
+builder.RegisterMediatR();      //
 
 var app = builder.Build();
-
 
 app.Use(async (ctx, next) =>
 {
@@ -23,13 +21,7 @@ app.Use(async (ctx, next) =>
     }
 });
 
-
-
-
-// Extensions/MinimalAPIExtensions.cs
-// EndpointDefinitions/EndpointDefinition.cs
-app.RegisterEndpointDefinitions();  
-                                    
-
+app.RegisterEndpointDefinitions();  // Extensions/MinimalAPIExtensions.cs
+                                    // EndpointDefinitions/EndpointDefinition.cs
 app.UseHttpsRedirection();
 app.Run();
