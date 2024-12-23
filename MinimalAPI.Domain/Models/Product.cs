@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MinimalAPI.Domain.Models
 {
@@ -12,9 +13,9 @@ namespace MinimalAPI.Domain.Models
         [Required]
         public int Qnt { get; set; }
         [Required]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.Now;
         public DateTime LastModified { get; set; }
-
     }
 }
